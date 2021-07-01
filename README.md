@@ -25,7 +25,6 @@ Cxbx-Reloaded is an emulator for running Microsoft Xbox (and eventually, Chihiro
       * NOTE: May be subject to change over time.
   * Winpcap is built-in, no installation is required.
 
-
 ## Automated Builds
 Cxbx-Reloaded doesn't currently have stable builds, but you can obtain pre-release builds from the Releases tab, or the links below:
 
@@ -50,7 +49,6 @@ Make sure to follow the issue template and that it contains:
     * (optional unless has any graphic bug for references)
 
 **NOTICE: Failure to follow template will auto close your ticket.**
-
 
 ## Additional information
 Cxbx-Reloaded has a [wiki](https://github.com/Cxbx-Reloaded/Cxbx-Reloaded/wiki) containing various subjects and background information.
@@ -81,7 +79,6 @@ Please contact us before you start working on something, so we can make sure you
         `git submodule update --init --recursive`
 
 ### Compiling
-
 #### Windows
 **NOTE:** Don't open `CMakeLists.txt` from Visual Studio, as it won't generate files in the `build` directory.
 
@@ -96,11 +93,11 @@ Please contact us before you start working on something, so we can make sure you
 ##### Generate Visual Studio files
 1. If you don't have CMake installed, open `___ Native Tools Command Prompt for VS 20##`.
 2. `cd` to the Cxbx-Reloaded directory.
-3. Run these commands.
-    1. `mkdir build & cd build`
-    2. `cmake .. -G "Visual Studio 16 2019" -A Win32`
-        * Visual Studio 2019 16.1 or later has CMake 3.14 bundled, and is required for the Visual Studio 2019 generator.
-        * Use `cmake .. -G "Visual Studio 15 2017" -A Win32` for Visual Studio 2017.
+3. Run this command:
+    * `cmake -B build -G "Visual Studio 16 2019" -A Win32`
+      * Visual Studio 2019 16.1 or later has CMake 3.14 bundled, and is required for the Visual Studio 2019 generator.
+      * Use `cmake -B build -G "Visual Studio 15 2017" -A Win32` for Visual Studio 2017.
+        * See *[Visual Studio Generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#id13)*.
 4. Open `Cxbx-Reloaded.sln` from the `build` directory.
 5. Select the Release configuration, then click Build.
     * Debug builds are **significantly slower, and only for developers**.
